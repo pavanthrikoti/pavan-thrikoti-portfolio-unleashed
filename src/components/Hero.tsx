@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail, FileText } from 'lucide-react';
 import { Hero3D } from './Hero3D';
+import { ErrorBoundary } from './ErrorBoundary';
 import { Button } from '@/components/ui/button';
 
 export function Hero() {
@@ -20,8 +21,10 @@ export function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* 3D Background */}
-      <Hero3D />
+      {/* 3D Background with Error Boundary */}
+      <ErrorBoundary>
+        <Hero3D />
+      </ErrorBoundary>
       
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-hero opacity-90" />
